@@ -1,5 +1,7 @@
 <template>
   <div id="app">
+     <router-link to="/" class='link'>Logg in With Solo Data API</router-link>
+     <router-link to="/register" class='link'> Register</router-link>
     <router-view/>
   </div>
 </template>
@@ -16,5 +18,14 @@
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.link{
+  margin:10px;
+  position:relative;
+  left:1rem;
+  outline:none;
+  decoration:none;
+
 }
 </style>

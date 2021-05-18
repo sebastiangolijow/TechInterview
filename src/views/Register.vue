@@ -1,18 +1,21 @@
 <template>
     <div class='home'>
+        <h1>Register</h1>
       <div class="main">
          <div class="col-md-6 col-sm-12">
             <div class="login-form">
                <form v-on:submit.prevent='login '>
                   <div class="form-group">
                      <label>User Name</label>
-                     <input type="text" class="form-control" placeholder="User Name"  v-model='usuario'>
+                     <input type="text" class="form-control" placeholder="aca"  v-model='usuario'>
                   </div>
                   <div class="form-group">
                      <label>Password</label>
                      <input type="password" class="form-control" placeholder="Password" v-model='password'>
                   </div>
-                  <button type="submit" class="btn btn-black">Login</button>
+                  <button type="submit" class="btn btn-black" @click="login()">Login</button>
+                
+               <button type="submit" class="btn btn-secondary" @click="register()"> Register</button>
                </form>
                <div class="alert alert-dark" role="alert" v-if="error">
                      {{error_msg}}
@@ -31,9 +34,8 @@
 
 
 <script>
-import axios from 'axios'
 export default {
-    name:'Home',
+    name:'Register',
     components: {
 
     },
@@ -52,17 +54,18 @@ export default {
             'usuario' : this.usuario,
             'password' : this.password
         };
-        console.log('aca')
-         axios.post('https://api.solodata.es/auth', json)
-        .then(data => {
-            if(data.data.status == 'ok'){
-                alert('logged')
-            } else {
-                this.error = true
-                this.error_msg = data.data.result.error_msg;
-            }
-        }).catch(e => console.log(e))
-}}
+         let user = window.localStorage.getItem('key')
+         user = JSON.parse(user)
+        json.usuario == user.usuario && json.password == user.password ? alert('logged') : alert('error')
+},
+        register(){
+              let user = {
+            'usuario' : this.usuario,
+            'password' : this.password
+        };
+        window.localStorage.setItem('key', JSON.stringify(user))
+        alert('registration successfull, now you can log in')
+        }},
 }
 </script>
 
