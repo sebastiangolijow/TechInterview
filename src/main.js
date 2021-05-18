@@ -6,6 +6,7 @@ import VueAxios from 'vue-axios'
 import axios from 'axios'
 import VueRouter from 'vue-router'
 import Register from './views/Register.vue'
+import Logged from './views/Logged.vue'
 
 Vue.use(VueAxios, axios)
 Vue.config.productionTip = false
@@ -23,7 +24,13 @@ const routes = [
   path:'/register',
   name:'Register',
   component: Register,
-  }
+  },
+  {
+  path:'/logged',
+  name:'Logged',
+  component: Logged,
+}
+
 ]   
 
 const router = new VueRouter({

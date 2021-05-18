@@ -24,8 +24,8 @@
   margin:10px;
   position:relative;
   left:1rem;
-  outline:none;
-  decoration:none;
+  text-decoration:none;
+  color:black;
 
 }
 </style>

@@ -57,6 +57,7 @@ export default {
         .then(data => {
             if(data.data.status == 'ok'){
                 alert('logged')
+                this.$router.push('/logged')
             } else {
                 this.error = true
                 this.error_msg = data.data.result.error_msg;

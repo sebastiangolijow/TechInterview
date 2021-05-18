@@ -7,7 +7,7 @@
                <form v-on:submit.prevent='login '>
                   <div class="form-group">
                      <label>User Name</label>
-                     <input type="text" class="form-control" placeholder="aca"  v-model='usuario'>
+                     <input type="text" class="form-control" placeholder="User name"  v-model='usuario'>
                   </div>
                   <div class="form-group">
                      <label>Password</label>
@@ -17,9 +17,6 @@
                 
                <button type="submit" class="btn btn-secondary" @click="register()"> Register</button>
                </form>
-               <div class="alert alert-dark" role="alert" v-if="error">
-                     {{error_msg}}
-                </div>
             </div>
          </div>
            <div class="sidenav">
@@ -56,7 +53,13 @@ export default {
         };
          let user = window.localStorage.getItem('key')
          user = JSON.parse(user)
-        json.usuario == user.usuario && json.password == user.password ? alert('logged') : alert('error')
+        if(json.usuario == user.usuario && json.password == user.password){
+        alert('logged'), user['token'] = 1, 
+        window.localStorage.setItem('key', JSON.stringify(user)),
+        this.$router.push('/logged')
+        } else { 
+        alert('error') 
+        }  
 },
         register(){
               let user = {
