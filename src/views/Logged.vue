@@ -1,46 +1,49 @@
 <template>
-  <b-card no-body class="card-profile" alt="Image placeholder" img-top>
-    <b-row class="justify-content-center">
-      <b-col lg="3" class="order-lg-2">
-        <div class="card-profile-image">
-          <a href="#">
-            <img id='img1' v-bind:src="require('../assets/profile.jpeg')" rounded="circle" />
-          </a>
-        </div>
-      </b-col>
-    </b-row>
-   <div class="text-center">
-        <h5 class="h3">
-         <h1>Sebastian Golijow's Portfolio</h1>
-        </h5>
-        <div class="h5 font-weight-300">
-          <i class="ni location_pin mr-2"></i>Barcelona, Spain
-        </div>
-        <div class="h5 mt-4">
-          <i class="ni business_briefcase-24 mr-2"></i>Full Stack Developer - Big Data Scientist.
-        </div>
-        <div>
-          <i class="ni education_hat mr-2"></i>Henry Bootcamp, Europen School of Business of Barcelona, Harvard Univeristy.
-        </div>
-        <hr class="my-4">
-        <p>I am a passionate Developer.
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  </head>
+  <body>
+  <div id="nav" class="navbar-menu py-6 mx-6">
+    <div class="navbar-start">
+      <a class="navbar-item" href="https://bulma.io">
+      <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: Free, open source, and modern CSS framework based on Flexbox" width="112" height="28">
+      </a>  
+      <a class="navbar-item" href="http://localhost:8080/#/">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Home_Icon.svg/512px-Home_Icon.svg.png" alt="Bulma: Free, open source, and modern CSS framework based on Flexbox" width="112" height="28">
+      </a>  
+    </div>
+</div>
+  <section class="section">
+    <div class="container">
+      <h1 class="title is-size-2">
+        <strong class=" py-6 my-6 is-italic">Sebastian Golijow's Portfolio</strong>
+        <h2 class="is-size-3 has-text-black">Full Stack Developer - Big Data Scientist.</h2>
+        <h2 class="is-size-4"> Barcelona, Spain </h2>
+        <h3 class="is-size-5"> Henry Bootcamp, Europen School of Business of Barcelona, Harvard Univeristy. </h3>
+      </h1>
+      <p class="py-6 my-6 subtitle has-text-black is-italic">
+         I am a passionate Developer.
          I really like doing full stack projects. I feel confortable using technologies such as React-Redux and NodeJS with Express, but if you give me a few weeks I think I can manage any JavaScript framework.
-         My primary language is JavaScript, but I also have knowledge on Python and C because of my past on the Big Data and Business Intelligence field. Nowadays I can combine this knowledge by combining web development with web positioning.</p>
-      </div>
-    <b-card-header class="text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
-      <div class="d-flex justify-content-between">
-      <div class="profile">
+         My primary language is JavaScript, but I also have knowledge on Python and C because of my past on the Big Data and Business Intelligence field. Nowadays I can combine this knowledge by combining web development with web positioning.
+      </p>
+       <div class="profile">
         <div class="social-links mt-3 text-center">
           <a href="https://www.instagram.com/sgolijow/" class="instagram"><img class='img2' v-bind:src="require('../assets/insta.png')" rounded="circle" /></a>
           <a href="https://github.com/sebastiangolijow" class="github"><img class='img2' v-bind:src="require('../assets/github.png')" rounded="circle" /></a>
           <a href="https://www.linkedin.com/in/sebastian-golijow-41a55a1b2/" class="linkedin"><img class='img2' v-bind:src="require('../assets/link.png')" rounded="circle" /></a>
+          <a href="sebastiangolijow.github.io/" class="linkedin"><img class='img2' v-bind:src="require('../assets/portfolio.jpg')" rounded="circle" /></a>
+
         </div>
-      </div>
-      </div>
-    </b-card-header>
+         </div>
 
-
-  </b-card>
+    </div>
+  </section>
+  </body>
+</html>
 </template>
 <script>
 export default {
@@ -57,4 +60,23 @@ export default {
     height:5rem;
     width:5rem;
 }
+
+.title{
+  display: flex;
+  flex-direction: column;
+  margin: 5px
+}
+
+#nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ 
+}
+
+body {
+  background: url('https://lh3.googleusercontent.com/t8jzr310rC5obgwRHRljXVYqpVt_LwPzoBoBknYxU9QH4sDPlItjYN_IGNbDIaK6d89pVC7XxGM87-QypJ9CmgHXSA=w640-h400-e365-rj-sc0x00ffffff');
+   background-size: cover;
+  }
+
 </style>
